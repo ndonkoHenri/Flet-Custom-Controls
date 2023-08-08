@@ -11,7 +11,7 @@ class VerticalSlider(ft.GestureDetector):
             max_val: [int, float] = 100,
             label: str = "{value}%",
             round_to: int = 0,
-            inactive_track_border_radius: [int, float, ft.BorderRadius] = 6,
+            inactive_track_border_radius: [int, float, ft.BorderRadius] = ft.BorderRadius(6, 6, 6, 6),
             active_track_border_radius: [int, float, ft.BorderRadius] = ft.BorderRadius(0, 0, 6, 6),
             slider_height: [int, float] = 200,
             slider_width: [int, float] = 60,
@@ -22,17 +22,17 @@ class VerticalSlider(ft.GestureDetector):
     ):
         """
         Args:
-            value: Set the default value of the slider. Must lie between min_val and max_val.
-            min_val: Set the minimum value of the slider
-            max_val: Set the maximum value of the slider
-            label: Set the label of the slider. "{value}" must be present and will be replaced by the slider's value.
-            round_to: Round the slider's value to a certain number of decimal places
+            value: the value of the slider. Must lie between min_val and max_val
+            min_val: the minimum value of the slider
+            max_val: the maximum value of the slider
+            label: the label of the slider. If set, "{value}" must be present and will be replaced by the slider's value
+            round_to: the number of decimal places to round the slider's value to
             inactive_track_border_radius: the border radius of the slider's inactive track
             active_track_border_radius: the border radius of the slider's active track
             slider_height: the height of the slider
             slider_width: the width of the slider
             inactive_track_color: the color of the slider's inactive track
-            active_track_color: Set the color of the slider's active track
+            active_track_color: the color of the slider's active track
             text_style: Set the style of the text that is displayed by default in the middle of the slider
             on_change: Callback function to be called when the value of the slider is changed
         """
@@ -196,11 +196,17 @@ if __name__ == "__main__":
     def main(page: ft.Page):
         page.title = "Vertical Slider Example"
         page.theme_mode = "light"
+        page.horizontal_alignment = page.vertical_alignment = "center"
         page.window_width = 390
         page.window_height = 400
 
+        def handle_slider_change(value):
+            print(f"SliderValue = {value}")
+
+        vertical_slider = VerticalSlider(on_change=handle_slider_change)
+
         page.add(
-            ft.Container(content=VerticalSlider(), alignment=ft.alignment.center, expand=True)
+            vertical_slider
         )
 
 
