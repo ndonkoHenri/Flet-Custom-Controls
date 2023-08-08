@@ -26,7 +26,9 @@ Feel free to check the source code and adjust/customize these to your needs.
 
 
 ### Capture
+The following image shows two vertical sliders.
 
+![image](https://github.com/ndonkoHenri/Flet-Custom-Controls/assets/98978078/c73114be-e619-42db-85c8-6686f7ed9cb0)
 
 
 ### Inspiration
