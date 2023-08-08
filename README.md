@@ -3,3 +3,4 @@
 
 - Paginated DataTable
 - Typing Animation
+- Vertical Slider
