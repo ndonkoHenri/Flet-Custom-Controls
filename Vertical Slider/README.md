@@ -100,7 +100,3 @@ Fires when the slider's value is changed.
 I inspired myself from [this](https://flutterawesome.com/flutter-vertical-slider-widget-to-customize-the-appearance-of-the-slider/) flutterawesome project. 
 
 The `example.py` file in this repo mimics the capture found on that site.
-
-
-### Known Issue
-I noticed that when the slider is resized, it becomes hideous. Will work on that soon and push an update.

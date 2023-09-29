@@ -114,9 +114,23 @@ class VerticalSlider(ft.GestureDetector):
 
         todo: make this function work as expected!
         """
-        self.slider_height = e.height
-        e.control.shapes[0].height = e.height
         self.slider_height, self.slider_width = e.height, e.width
+        # update canvas
+        self._canvas.width = self.slider_width
+        self._canvas.height = self.slider_height
+
+        # update the text
+        e.control.shapes[2].x = self.slider_width / 2
+        e.control.shapes[2].y = self.slider_height / 2
+
+        # update base Rect
+        e.control.shapes[0].height = self.slider_height
+
+        # update fill Rect
+        e.control.shapes[1].x= 0
+        e.control.shapes[1].y = self.slider_height
+        e.control.shapes[1].height =  -self.__new_value_from_old(self.value, self.min_val, self.max_val, 0,-self.slider_height )
+        e.control.shapes[1].width = self.slider_width
         self.update()
 
     def __handle_slider_drag(self, e):
