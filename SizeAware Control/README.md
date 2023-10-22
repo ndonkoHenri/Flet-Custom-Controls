@@ -40,7 +40,7 @@ ft.app(main)
 ## Capture
 A capture of the example above:
 
-![image]()
+![image](https://github.com/ndonkoHenri/Flet-Custom-Controls/assets/98978078/198c49e9-0f7e-4d2a-bfb3-660d9c70d7ed)
 
 
 ## Properties
