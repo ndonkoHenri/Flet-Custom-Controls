@@ -7,10 +7,10 @@ import flet.canvas as cv
 class SizeAwareControl(cv.Canvas):
     def __init__(self, content: Optional[ft.Control] = None, resize_interval: int=100, on_resize: Optional[Callable]=None, **kwargs):
         """
-        :param content: The content of the instance. Defaults to None.
+        :param content: A child Control contained by the SizeAwareControl. Defaults to None.
         :param resize_interval: The resize interval. Defaults to 100.
         :param on_resize: The callback function for resizing. Defaults to None.
-        :param kwargs: Additional keyword arguments.
+        :param kwargs: Additional keyword arguments(see Canvas properties).
         """
         super().__init__(**kwargs)
         self.content = content
